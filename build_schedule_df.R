@@ -17,3 +17,15 @@ for(i in mylinks)
 
 # Bind data frames from each session
 talks <- bind_rows(new_df)
+
+# Tidy dates and times
+talks <- talks %>%
+  tidyr::separate(time, into = c("hour", "min"), sep = ":") %>%
+  tidyr::separate(min, into = c("min", "am_pm"), sep = 2) %>%
+  mutate(hour = as.numeric(hour),
+         min = as.numeric(min),
+         hour = ifelse(am_pm == "PM", hour + 12, hour),
+         date = mdy(talks$date),
+         datetime = ymd_hm(paste(date, hour, min, sep="-"))) %>%
+  select(date, datetime, location, room, session, title, link)
+

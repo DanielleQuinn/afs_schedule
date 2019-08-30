@@ -1,5 +1,11 @@
-# For each link extracted from the AFS Detailed Schedule, extract the schedule details
+# Load libraries
+library(rvest)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(stringr)
 
+# For each link extracted from the AFS Detailed Schedule, extract the schedule details
 new_df <- list(NULL)
 counter <- 0
 starttime <- Sys.time()

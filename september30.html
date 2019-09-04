@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>September 30, 2019</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">AFS/TWS Schedule</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="september30.html">September 30</a>
+</li>
+<li>
+  <a href="october1.html">October 1</a>
+</li>
+<li>
+  <a href="october2.html">October 2</a>
+</li>
+<li>
+  <a href="october3.html">October 3</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">September 30, 2019</h1>
+
+</div>
+
+
+<table>
+<thead>
+<tr class="header">
+<th align="center">Time</th>
+<th align="center">Atlantis, Grand Ballroom 1</th>
+<th align="center">Atlantis, Grand Ballroom 2</th>
+<th align="center">Atlantis, Grand Ballroom 3</th>
+<th align="center">Atlantis, Grand Ballroom 4</th>
+<th align="center">Atlantis, Grand Ballroom 5</th>
+<th align="center">Atlantis, Grand Ballroom 6</th>
+<th align="center">Atlantis, Grand Ballroom 7</th>
+<th align="center">RSCC, A1</th>
+<th align="center">RSCC, A2</th>
+<th align="center">RSCC, A3</th>
+<th align="center">RSCC, A4</th>
+<th align="center">RSCC, A5</th>
+<th align="center">RSCC, A6</th>
+<th align="center">RSCC, A7</th>
+<th align="center">RSCC, A8</th>
+<th align="center">RSCC, A9</th>
+<th align="center">RSCC, A10</th>
+<th align="center">RSCC, A11</th>
+<th align="center">RSCC, A12</th>
+<th align="center">RSCC, A13</th>
+<th align="center">RSCC, A14</th>
+<th align="center">RSCC, A15</th>
+<th align="center">RSCC, A16</th>
+<th align="center">RSCC, A17</th>
+<th align="center">RSCC, A18</th>
+<th align="center">RSCC, A19</th>
+<th align="center">RSCC, A20</th>
+<th align="center">RSCC, C1</th>
+<th align="center">RSCC, C2</th>
+<th align="center">RSCC, C3</th>
+<th align="center">RSCC, C4</th>
+<th align="center">RSCC, D1</th>
+<th align="center">RSCC, D2</th>
+<th align="center">RSCC, D3</th>
+<th align="center">RSCC, D4</th>
+<th align="center">RSCC, D5</th>
+<th align="center">RSCC, D6</th>
+<th align="center">RSCC, D7</th>
+<th align="center">RSCC, D8</th>
+<th align="center">RSCC, D9</th>
+<th align="center">RSCC, D10</th>
+<th align="center">RSCC, F1</th>
+<th align="center">RSCC, F2</th>
+<th align="center">RSCC, F3</th>
+<th align="center">RSCC, F4</th>
+<th align="center">RSCC, F6</th>
+<th align="center">RSCC, F7</th>
+<th align="center">RSCC, F8</th>
+<th align="center">RSCC, F9</th>
+<th align="center">RSCC, F10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">07:55</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/41661">Welcoming Remarks</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center">08:00</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/37043">Spring Chinook Response to 21st Century Fish Passage Infrastructure</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/39864">A Novel Approach to Interactions between People and Oceanic Pelagic Organisms</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/40103">Responding to Ecosystem Transformation: Resist, Accept, or Direct?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/37014">Capitalizing on Social Media; Breaking News and Changing Minds As a Government Agency</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/36476">Discovery of Grass Carp Larvae in the Colorado River Arm of Lake Powell</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/40793">Applying UI/UX Methods to Recruit and Retain Anglers. A Case Study of Angler’s Atlas Website and MyCatch Mobile App.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/40106">From Toe Tags to Selfies – Where Have We Been, Where Are We Going?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/35773">Oregon on the Cutting Edge: Creating the Foundation for 21st Century Molecular Monitoring</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/40880">Introductory Remarks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40036">Understanding Local Adaptation in Cold Water Fish to Predict Responses to Climate Change</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/juvenile-salmon-ecology-and-management/40175">Longitudinal Patterns of Logjams and Occupancy By Juvenile Chinook Salmon Along a Sub-Arctic Boreal Riverscape</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/37657">Welcoming Remarks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/39105">Conserving Landscape Integrity – Two Examples from the State of California</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/40406">Relationships Among Side-Scan Sonar Classified Habitat and Fish Densities at Multiple Spatial Scales</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/38275">A Bad Practices Guide to Modelling Growth in Fisheries Stock Assessment</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/39611">Evaluating Great Lakes Fisheries Ecosystems As Coupled Human and Natural Systems (CHANS)</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/40542">Ethical-Bias Issues in State Agencies: Science, “Isms” Vs. Human Diversity, and Effectiveness of Natural-Resources Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/40270">Environmental Impact Assessment for Hydropower Regulation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/36820">Go with the Flow: Insights into Salmon Science and Management from a Long-Term Floodplain Monitoring Program</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/39499">A Commercial Fishing Apprenticeship Program for California</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/39716">Improving Communication and Collaboration in Fisheries Conservation through Increasing Transparency of the Process and the Science</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/38651">Overcoming Challenges in Salmon and Steelhead Monitoring Using Applied Technologies</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/40377">Beaver-Related Management and Restoration: An Introduction</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecosystems/38276">The Shrinking Lake Chad!: Urgent Need for Concerted Effort By Member Countries to Save It from Extinction</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/40714">Introductory Remarks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/40152">Getting It Right: Captive Rearing in the 21st Century</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/41664">Introductory Remarks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/reno-vating-habitat-for-fish-and-wildlife-a-film-festival-highlighting-collaborative-habitat-conservation-and-its-benefits-day-1/41650">Session 1 – Our Stories: The National Fish Habitat Partnership</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/amphibians-and-reptiles-in-human-dominated-landscapes/35106">Spatial Ecology of Turtle Populations within an Urban Landscape</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/climate-adaptation-strategies-in-fish-and-wildlife-management/35043">Climate Change Refugia for the Conservation of Fish and Wildlife</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35112">Do Fisheries and Wildlife Graduates Meet Employer Needs?</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35084">North American Bsal Strategic Plan: Plans to Prevent an Invasion</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-impacts-on-conservation-i/37932">Landscape Use By Forest Owls Two Years after Mixed-Severity Wildfire: Novel Findings Using Passive Acoustic Monitoring</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-space-use/35952">Timing of Resource Availability Drives Social Evolution and Space Use of Two Similar Tree Squirrels.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/invasive-species-management-i/37020">Measuring Impacts of Non-Native Species on Cavity-Nesting Birds at the Continental Scale</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-genetics-i/38037">Non-Invasive Genetics Provides a Window into the Behavioral Ecology of Unhabituated Mountain Gorillas in Uganda</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-damage-management-i/37966">A New Approach for Nonlethal Tool Evaluation: Using Occupancy Models to Test Coyote Fladry</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-policy-i/38049">Quantifying Overlap and Fitness Consequences of Migration Strategy with Seasonal Habitat Use and a Conservation Policy</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/carnivore-ecology-management-i/38036">Estimating Occupancy and Recovery Trajectories of an Imperiled Carnivore By Integrating Camera Traps, Detection Dogs, and Reaction-Diffusion Models.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-waterfowl-i/36122">Population Status and Vital Rates of Temperate-Breeding Canada Geese in Kansas</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/movement-ecology-i/37035">Identifying Functional Corridors for Black Bear Dispersal in a Fragmented Landscape.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/urban-wildlife-management-ecology-i/37697">Methods and Strategies for Effective Urban Wildlife Conservation and Management: Application to the District of Columbia</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-bats-i/35667">Long-Term Effects of Forest Harvesting on Habitat Use By Insectivorous Bats</a></td>
+</tr>
+<tr class="odd">
+<td align="center">08:20</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/40845">Introductory Remarks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/38954">Demographics of a Rebounding Wild Chinook Salmon Population in the East Fork Salmon River, Idaho.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/39637">Scales of Forecasting for Dynamic Management: Gaps in Marine and Terrestrial Systems</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/38870">Guiding Principles for Managing Ecosystem Transformation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/37725">Pole of Inaccessibility: Bringing Ocean Sciences to North America’s Great Interior</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/40427">Grass Carp Invasion in the Colorado River: Predicting the Consequences of Potential Management Actions in the Face of Uncertainty</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/38577">Interactive User Interfaces: Building Models, Building Partnerships</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/40767">The Evolution of Animal Movement Analytics from MCP to Big Data</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/36555">Casting a Broader Net: Using Microfluidic Metagenomics to Capture Aquatic Biodiversity Data from Diverse Taxonomic Targets</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/38676">Declining Stocks – Why We Need the Concept of Global Swimways</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/36488">Comparison of Brook Trout Density and Distribution in Vermont’s Streams between the 1950s and the 2000s</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/juvenile-salmon-ecology-and-management/39606">Juvenile Chinook Salmon (Oncorhynchus tshawytscha) Movement, Overwinter Survival, and Outmigration Timing in the Chena River, Alaska</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/38769">The Social and Political Context of Harvest Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/39166">Identifying Conservation Opportunities across the Hot Deserts of North America Using Landscape Conservation Design</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/40759">Planning for the Future: Utilizing Habitat and Climate Modeling to Prioritize Restoration Actions for Salmonids</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/40475">Cohort Resonance: How Age Structured Populations Respond to Environmental Variability</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/38668">Wildlife Poaching in the Context of Coupled Human and Natural Systems</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/35687">Building Futures and Advancing Science through Ethical Foundations</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/38328">Effectiveness of Fine-Spaced Low-Sloping Racks to Protect Atlantic Salmon Smolts at Four Hydropowerplants in South-Western France</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/40448">Monitoring and Applied Research to Assess Restoration Benefits for Delta-Rearing Juvenile Chinook in the Nisqually River Delta, WA.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/39644">Estimating Detection and Occupancy Coefficients for Coral Reef Fishes in the Western Pacific Ocean to Improve Stock Assessment</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/39156">Time Versus Space: Choice of Effort Metric Can Avoid Bias in Boat Electrofishing CPUE</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/40443">Coastal Fisheries Extension Enhancement through Dynamic Information Documents</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/38545">More Than a Tradition: The Importance of Understanding the Perspectives and Baselines of Indigenous Nations with Respect to Modern Natural Resource Challenges.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/38935">Split-Beam and Imaging Sonar Used to Enumerate Migratory Fish Passage in Large, Turbid Rivers of the Alaskan Arctic–Yukon–Kuskokwim (AYK) Region</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/40791">Low-Tech Process-Based Restoration to Treat Structurally Starved Streams – What Is It and Why Do We Need To Do a Lot More of It?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecosystems/40047">Assessing Niger-Delta Wetland Resources: A Case-Study of Mangrove Ecosystem</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/38712">Advances in DNA Sequencing Technology and Its Applications for Captive Rearing of Fish and Wildlife</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/38481">I-Nature (Indigenous iNtegration of Aquatic sciences and Traditional-Ecological-Knowledge for Undergraduate culturally Responsive Education): Piloting a Culturally Inclusive Approach to STEM Education for Underrepresented Minority Undergraduates.</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/amphibians-and-reptiles-in-human-dominated-landscapes/35110">Urbanization, Wildfire, and Drought Effects on Native Stream Breeding Amphibians in Southern California</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/climate-adaptation-strategies-in-fish-and-wildlife-management/35149">Trout in Hot Water? Understanding Climate Change Effects on Native Salmonids for Climate Adaptation in the Northern Rockies</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35143">Natural Resource Professional Certification Shapes University Curricula</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35086">Susceptibility of North American Amphibian Species to Batrachochytrium Salamandrivorans</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-impacts-on-conservation-i/37943">Smoke on the Water, Fire in the Sky: Quantifying the Effects of Smoke Pollution on Large Mammal Movement and Detections</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-space-use/38137">Bridging Personality and Space Use in a Free-Ranging Ground Squirrel Population</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/invasive-species-management-i/37763">Comparison of Abundance Indices and Density Estimates in Wild Pigs Using Camera Traps</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-genetics-i/37995">Using Environmental DNA Methods to Improve Winter Surveys for Rare Carnivores: DNA from Snow and Improved Noninvasive Techniques</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-damage-management-i/37108">Localized Management for Reducing Corn Damage Caused By White-Tailed Deer in Minnesota</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-policy-i/36659">Re-Establishment of the Eurasian Otter (Lutra lutra) in South Korea from 1987 to 2010: The Contributions of Strengthened Protections Laws and Forest Development</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-lagomorphs/38025">Shrub Encroachment Alters the Landscape of Fear for Lagomorphs in the Chihuahuan Desert</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/carnivore-ecology-management-i/35359">When Carnivores Clash: Evidence of Competition and Prey-Shifting By Brown Bears during a Period of Sea Otter Recovery</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-waterfowl-i/36801">An Assessment of Waterfowl Use of Intensely Managed Areas in Michigan</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/movement-ecology-i/37230">Effects of Underburning on Habitat Use of Mule Deer during Migration</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/urban-wildlife-management-ecology-i/37706">Detroit City Dwellers: Co-Occurrence Among Carnivores in Urban Environments</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-bats-i/38175">Characterizing Summer Roosts of Male Little Brown Myotis in Lodgepole Pine-Dominated Forests</a></td>
+</tr>
+<tr class="even">
+<td align="center">08:40</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/40676">Exploration of Climate Change Impacts on British Columbia Salmon Via Pathway of Effects Models.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/38460">The Application of Parentage-Based Tagging Improves Abundance Estimates for ESA-Listed Wild Adult Chinook Salmon and Steelhead in the Snake River Basin</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/38693">Challenges in Developing Dynamic Ocean Management in the Central Pacific</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/40523">Resisting, Accepting or Directing Change: A New Way to Think about Climate Adaptation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/39233">Sharing the Shore: Protecting the “Wild” in West Coast Wildlife</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/40136">Sources and Movement of Grass Carp in the Great Lakes: Insights from Otolith Chemistry</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/38612">Interactive Data Visualization Tools for Enhanced Communication with Stakeholders</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/39020">Dividends Realized in Nevada from Marking, Tagging, and Tracking Fish and Wildlife</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/40513">Aquatic Biodiversity from a Bottle</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/40669">Global Review of Migratory Freshwater Fish: An Updated Assessment of Options for Listing on the Appendices of the U.N. Convention on Migratory Species</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40194">Role of Declining Inorganic Aluminum Concentrations and Exposure Duration in the Recovery of Brook Trout Populations in Acidified Streams of the Adirondack Mountains, New York</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/juvenile-salmon-ecology-and-management/36025">Identifying Juvenile Chinook Salmon (Oncorhynchus tshawytscha) Overwintering Locations in the Tanana Flats (Alaska, USA)</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/38862">A Decision Analytical Framework for Developing Harvest Regulations</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/36065">Chihuahuan Desert Native Fish Conservation Areas: A Multispecies and Watershed Approach to Preservation of Freshwater Fish Diversity</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/39659">A New Parametric Mixture-Cure Survival Model to Predict Mortality Risk in the Context of Time-Varying Covariates</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/39136">Dynamics of Fish Production in a Rapidly Changing Ecosystem: Coupling Age Structured Stock Assessment and Fish Bioenergetics Models of Lake Trout in the Main Basin of Lake Huron</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/38920">Social-Ecological Catchments</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/40717">The Questionable Ethics of Exporting Fisheries Science and Assistance Abroad</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/36626">Predicting Distribution of Fish Guilds in Gabon’s Ogooué River</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/38844">Potential Effects of Tidal Habitat Restoration on Endangered Delta Smelt: Empirical Observations to Inform Stakeholder Concerns</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/40573">The “School Trap” Hypothesis Revisited</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/37112">To Randomize or Not to Randomize: An Evaluation of Survey Design for a Long-Term Monitoring Program</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/39078">Hot Coffee and Fresh Fish: Lessons Learned from 20+ Years of Workshops for Recreational and for-Hire Industry Stakeholders</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/36480">Advocacy, Breweries, and Collaborative Science: The ABCs of Successful Stakeholder Engagement</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/38551">Estimating Atlantic Salmon (Salmo salar) Population Size in a Multispecies River Using Adaptive Resolution Imaging Sonars (ARIS) and Underwater Cameras.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/37433">Managing Expectations of Beaver-Related Restoration in Rangeland Streams</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecosystems/36689">Do Resource Subsidies from Invasive Riparian Trees Facilitate Non-Native Fish in the Upper Colorado River Basin?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/39173">Growing Pains: Regulating Cannabis Cultivation (Past, Present, and Future)</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/38539">Genetics As a Tool for Conservation Hatcheries</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/38498">Engaging Adolescent Learners through Marine Sciences</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/amphibians-and-reptiles-in-human-dominated-landscapes/35212">Urban Patches Provide Critical Small Vertebrate Diversity Value within the California Floristic Province Hotspot</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/climate-adaptation-strategies-in-fish-and-wildlife-management/35044">Developing New Strategies Against Invasive Species in the Anthropocene</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35122">How to Become More Competitive for Federal Employment: A Discussion of the Application Process and Ideal Competencies</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35087">Studies of the Skin Secretions of Eastern Newts in Defense Against Batrachochytrium Salamandrivorans</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-impacts-on-conservation-i/37400">A Complex Social and Ecological Agent-Based Model of Pyrodiversity on State Game Areas in Michigan</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-space-use/37390">Anthropogenic Subsidies Affect Common Raven Movement and Space-Use</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/invasive-species-management-i/36989">Movement Responses Inform Effectiveness and Consequences of Baiting Wild Pigs</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-genetics-i/38378">Outfoxed No More: Sierra Nevada Red Fox Captures Reveal New Insights into Genetics, Habitat Use, and Reproduction</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-damage-management-i/35983">Free Meal, May Contain Lead: Scavenging Shot Small Mammals</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-policy-i/36900">A Multidisciplinary Assessment of Cross-Boundary Habitat Mitigation for at-Risk Species</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-lagomorphs/38073">Multi-Scale and Replicate Landscape Habitat Modeling of Pygmy Rabbit Habitat in the Great Basin, U.S.a.</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/carnivore-ecology-management-i/36369">Conservation Implications of Sex-Specific Landscape Suitability for a Large Generalist Carnivore</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-waterfowl-i/37724">Bear Presence Affects Behaviour of Nesting Lesser Snow Geese and Avian Predators</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/movement-ecology-i/38240">Invasive Plants Negatively Influence the Success of Translocated Juvenile Mojave Desert Tortoises</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/urban-wildlife-management-ecology-i/36507">Urban Mitigation: Integrating Habitat, Carbon and Ecosystem Services at Community-Relevant Scales</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-bats-i/37765">Bat Research, Education, and Outreach: Exploring Projects in Pennsylvania</a></td>
+</tr>
+<tr class="odd">
+<td align="center">09:00</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/38458">Endangered Sockeye Salmon (Oncorhynchus nerka) Imperiled By Eutrophication and Climate Change through Degradation of Nursery Lake Critical Habitat</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/40405">Downstream Rearing Chinook Salmon in the Upper John Day River</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/36783">Decision Support Tools for Dynamic Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/40651">The Anthropocene, 6th Extinction, and Managing with a Lens Towards Global Biodiversity: A Case Study for Stewarding Ecological Transformation on the Kenai Peninsula</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/39031">The Art of Communicating Cool Science, New Discoveries, and Policy Decisions in the Age of Twitter</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/39579">Winter Habitat Use and the Potential Harvest of Diploid and Triploid Grass Carp in a Large Lake</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/38708">Customized Applications to Streamline Workflow for Wildlife and Fisheries Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/38217">Using Visible Ear Tags on White-Tailed Deer to Reduce Research Costs, Expand Research, and Increase Community Engagement.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/39171">Early Detection of Aquatic Invasive in Big Water Using Microfluidic Metagenomic Edna Sequencing</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/38464">Realizing the Future of Fish Passage Science, Engineering, and Practice</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40344">Growth and Spatial Distribution of Sympatric Stream Salmonids in a Long-Term Individual-Based Study – Clues to Coexistence in a Changing Environment</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/juvenile-salmon-ecology-and-management/38434">Food Deprivation Records in Juvenile Salmon Otoliths</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/38857">Choosing an Optimal Duck Season: Integrating Hunter Values with Duck Migration Data</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/40263">Acheiving Recovery through Cooperation: Saving a Sucker through Partnerships</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/39138">Fish Predation on a Landscape Scale</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/38884">Application of State Space Stock Assessment Modeling to Lake Whitefish (Coregonus clupeaformis)</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/37454">Ecological Dynamics and Adaptive Management of Fisheries and Wildlife in a Coupled Social-Ecological System in a Central African Flooded Forest</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/35839">Speaking Truth to Power: Scientists As “Advocates” and Ways to Engage</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/39052">LIFE4FISH Project: Downstream Fish Migratiion Alont the Low Meuse River</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/39459">Effects of Changes in Freshwater Inflow and a Fishing Closure on Large-Bodied Nekton Communities of Northeastern Florida Bay</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/37193">Geographic Variation in the Reproductive Ecology of the Panamic Grunt in the Southeastern Gulf of California</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/40291">Characterization and Visualization of Fish Otoliths Towards a Mechanistic Understanding of Otolith Formation and Growth</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/40090">Marine Resource Education Program (MREP): Empowering Stakeholders in Fisheries Science and Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/40019">#Fishmas Time Is Here: Using Social Media for Stakeholder Engagement As an Early Career Scientist</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/40308">Use of Subsampling Techniques to Improve the Precision, Accuracy, and Efficiency of Imaging Sonar Results</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/38537">Oregon Beaver Relocation Requirements</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecosystems/39125">Ecological Thresholds in Forecast Performance for Key United States West Coast Chinook Salmon Stocks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/38950">Dynamics of Cannabis Production in the Emerald Triangle</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/40493">Applied Conservation Genetics at the Lahontan National Fish Hatchery Complex</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/39346">Partnership Education Program Alaska</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/amphibians-and-reptiles-in-human-dominated-landscapes/35109">Assessing and Verifying Urban Habitat Connectivity for the Northern Red-Legged Frog</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/climate-adaptation-strategies-in-fish-and-wildlife-management/35046">Climate-Informed Fisheries Management: Challenges and Applications in Changing Seas</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35123">Wildlife Competencies: A Private Perspective</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35090">Testing the Adaptive Microbiome Hypothesis in Eastern Red-Spotted Newts Exposed to Batrachochytrium Salamandrivorans</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-impacts-on-conservation-i/37907">A Multi-State Analysis of the Impacts of Wildfire on the Apparent Survival, Recruitment Rates, and Transition Probabilities of Northern Spotted Owls.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-space-use/35735">Testing the Hotspot Hypothesis: Lesser Prairie-Chicken Lek Formation and Female Space Use</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/invasive-species-management-i/37213">Biological Invasions Disrupt Activity Patterns of Native Wildlife: An Example from Invasive Wild Pigs</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-genetics-i/37494">Genetic Consequences of Population Decline in Kit Foxes: Insights from Historical Specimens and Implications for Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-damage-management-i/37235">The Efficacy of Switchgrass Monocultures for Decreasing Breeding Bird Hazards</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-policy-i/35293">Improving Implementation of the Endangered Species Act: Finding Common Ground through Common Sense</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-lagomorphs/37865">Does Bottom-up Regulation Play an Important Role in the Snowshoe Hare Cycle?</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/carnivore-ecology-management-i/37005">Intraguild Interactions and Island Biogeography Drivers of Carnivore Spatiotemporal Distributions in a Temperate Archipelago</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-waterfowl-i/38155">Wetland Use By Spring Migrating Ducks in the Prairie Pothole Region of Iowa</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/movement-ecology-i/37288">Overcoming Post-Release Dispersal to Successfully Translocate Lesser Prairie-Chickens</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/urban-wildlife-management-ecology-i/37881">Comparing Environmental and Anthropogenic Drivers of Bat Species Distributions: Implications for Urban Habitat Restoration and Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-bats-i/36795">Distribution and Seasonal Occupancy of Hawaiian Hoary Bats on O‘Ahu</a></td>
+</tr>
+<tr class="even">
+<td align="center">09:20</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/39163">Changes in Stability and Productivity of Pacific Salmon Populations</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/38957">Examining the Differences in Juvenile Rearing Strategies and Survival Rates between the Last Remaining Populations of Wild Spring-Run Chinook Salmon in California’s Central Valley</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/36713">eSDM: A Tool for Creating and Exploring Ensembles of Predictions from Species Distribution Models</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/39924">RAD-Ical Approaches for Managing Fish Populations in a Changing Climate.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/39967">Harnessing the Power of Art to Advance Federal Fisheries Management: An Interdisciplinary Experiment</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/37831">Grass Carp Thermal Maturation and Proximal Cues for Spawning in Ponds</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/40005">Enhancing Reproducibility in Fisheries Science with Interactive User Interfaces</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/40314">Effects of Riparian Canopy Reduction on Growth Rates of Salmonids and Amphibians in a Small Northern Coastal California Stream</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/40382">Harnessing Genetics to Evaluate Stream Capture As a Contributor to Freshwater Biodiversity</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/37399">Global Swimways: Definitions and Status</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/39841">Temperature-Dependent Brown x Brook Trout Interactions: Implications for Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/juvenile-salmon-ecology-and-management/36721">Invasive Competition and Predation: An Ecological Perspective on Threats to Juvenile Chinook Salmon</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/38329">Using Structured Decision Making to Incorporate Ecological and Social Values into Harvest Decisions: Case Studies of Walleye, Deer, and Turkey</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/39411">Past, Present, and Future of Upper Colorado River Endangered Fish Recovery</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/40514">Fishes in the San Francisco Estuary: Some like It Hot, Some like It Cold, Some High Salinity, Some Low DO</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/38936">Bayesian Hierarchical State-Space Models for Life Cycle Modeling and Abundance Predictions with an Application to Delta Smelt</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/36053">Applying a “Two-Eyed Seeing” Approach to Improve Fisheries Research and Management in the Anthropocene</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/39241">What Is “Agenda-Driven” Science? a Case Study Pertaining to the Spotted Owl, Wildland Fire, and Logging</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/40218">Quantifying Responses of Morphologically Distinct Riverine Fishes Exposed to Simulated Turbine Blade Strike to Better Inform Design of Safer Hydropower Turbines</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/40024">Using Long-Term Monitoring Data to Assess Spatial Dynamics of Red Drum Recruitment</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/38875">Determining Effective Size for Developing Size-Fecundity Relationship-an Example of Gulf of Maine Northern Shrimp (Pandalus borealis)</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/39763">Building a Common Framework for Inland Sport Fish Standard Assessment Methods</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/40322">Educational Programming to Address the Needs of Stakeholders of New Jersey’s Fisheries</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/39214">Combining Traditional Farming with Modern Science</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/40255">Use of Low-Cost, Autonomous, Underwater Camera Systems to Advance Understanding of Fish Habitat Usage and Behavior</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/39621">What to Expect from Beaver in Beaver-Related Restoration</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecosystems/40033">Integrating Conceptual and Qualitative Models in Integrated Ecosystem Assessments – a Case Study in the Northeast United States Large Marine Ecosystem</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/37050">Cannabis Landscapes in Oregon</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/40718">Feralization: Restoration, Rehabilitation, Invasion, and the Establishment Process for Domesticated Organisms</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/39679">Four Patterns of Gender Bias Every Professional Should Know</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/amphibians-and-reptiles-in-human-dominated-landscapes/35107">Natural and Unnatural History: Habitat Use and Behavior of Amphibians in a Northern City</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/climate-adaptation-strategies-in-fish-and-wildlife-management/35050">The National Park Service Climate Change Response Program</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35124">Competencies in Wildlife &amp; Fisheries Education: An Academic Perspective</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35092">Antifungal Properties of Salamander Skin Secretions Are Not Always Related to in-Vivo Susceptibility or Equally Effective Against Both Chytrid Fungal Pathogens.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-impacts-on-conservation-i/38011">Retrospective Assessment of Suppression and Restoration As Tools for Conserving Sage- Grouse Habitat Degraded By Wildfires within the Great Basin</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-space-use/37029">A Novel Approach to the Analysis of Dynamic Animal Space Use Interactions from Telemetry Data</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/invasive-species-management-i/35618">Does Habitat Disturbance Benefit to the Invasion Success of an Alien Slug Species?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-genetics-i/36899">Multi-Scale Landscape Genetics of American Marten in the Northeastern United States</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-damage-management-i/37594">Multi-Scale Abundance and Distribution Trends of Double-Crested Cormorants in the Mississippi Delta</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/wildlife-conservation-policy-i/36912">The Track Record of the Endangered Species Act in Recovering Imperiled Species</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-lagomorphs/36637">Spatially Explicit Assessment and Planning Tools to Guide New England Cottontail Restoration</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/carnivore-ecology-management-i/37125">Relationships between Carnivores of the Oregon Cascades through Their Diet</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-waterfowl-i/38121">Integrated Population Models Reveal the Influence of Local Environmental Phenology and Immigration on Two Arctic-Breeding Goose Species</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/movement-ecology-i/37484">Effectiveness of Translocation for Nuisance American Black Bears Varies By Sex and Age and Is Dependent on Distance and Habitat</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/urban-wildlife-management-ecology-i/37307">Investigating Perceptions of Wildlife and Vegetation in Urban Vacant Lots</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-bats-i/36716">Improving Bat Survey Efficiency and Probable Presence Results By Combining Physical Capture and Acoustic Recording Methods</a></td>
+</tr>
+<tr class="odd">
+<td align="center">09:40</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/climate-adaptation-strategies-in-fish-and-wildlife-management/40781">Panel Discussion</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35094">The Pathology of Bsal Chytridiomycosis: Documenting Anatomical Changes and Exploring What They Might Mean Clinically</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center">10:10</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/reno-vating-habitat-for-fish-and-wildlife-a-film-festival-highlighting-collaborative-habitat-conservation-and-its-benefits-day-1/41639">Plenary</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center">13:10</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/39671">Impacts of Fisheries Injuries and Water Temperature on Survival of Migrating Fraser River Sockeye Salmon</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/40230">A Multistage Gompertz Life Cycle Model Applied to Threatened Salmon</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/38746">Climate-Ready and Resilient Fisheries: Using Satellite Data to Conserve and Manage Life in the Ocean and Support Sustainable Fisheries</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/40721">Panel Discussion</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/39001">Communicating Science and Engaging with Alaska Communities</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/36700">Black Carp in North America: A Description of Range, Habitats, Timing, and Methods of Reported Captures</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/38980">Dynamic Rshiny Applications to Support Gulf of Mexico Land Conservation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/40646">Joint Analysis of Mark-Recapture and Telemetry Data for Abundance Estimation of Largemouth Bass in Lake Shoreline Habitats</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/39097">A New Method for More Affordable and Effective Noninvasive Genetic Sampling Using High-Throughput SNP Genotyping</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/40677">The Unnatural History of Fish Migrations in the Laurentian Great Lakes, and Needs for Strategic Restoration</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40384">Managing Brook Trout and Angler Expectations in a Multi-Year Westslope Cutthroat Trout Restoration Project in Western Montana</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-resilience-can-fish-wildlife-and-humans-adapt-to-shifts-in-wildfire-disturbance-part-i/40548">Spatial Distribution of Wildfire in Australia and Known Effects on Freshwater Aquatic Systems.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/38755">Structured Decision Making Provides Insight When Selecting a Preferred Population Monitoring Program</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/39468">The Virgin River Program: Cooperation, Conservation and Change</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/40195">Spatial and Temporal Patterns of Land Use, Land Cover, and Land Change in Great Lakes Watersheds</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/39514">Exploring Alternatives to the Multinomial for Fitting Composition Data within a Stock Assessment Simulation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/39620">Metacoupled Fisheries: Integrating Ecosystems and Human Systems across Space and Time to Enhance Fisheries Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/38842">Filtering, Distortion, and Colonization of Scientific Information in the Policy and Politics of Fishery Conservation.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/38874">Adaptive Management of Hydropower to Facilitate Downstream Migration of Atlantic Salmon Smolts: The Case of Poutès Dam on the Allier River (France)</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/40313">Use of Long-Term Estuarine Trawl Data to Inform §316(b) Compliance</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/36772">Integrated Chemical Tracer and Biotelemetry Approaches Cast New Light on Skate Dispersal: Implications for Contemporary Fisheries Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/40023">Evaluating Remote Site Incubators to Support the Reintroduction of Arctic Grayling to Michigan</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/39464">What’s the Hook to Fisheries Education Efforts? Lessons Learned While Communicating Science to North Carolina Saltwater Anglers</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/38593">From Hostile to Helpful: A Success Story of Stakeholder Collaboration</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/38989">Using Environmental DNA to Detect the Invasive New Zealand Mud Snail (Potamopyrgus antipodarum) in Freshwaters</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/39002">Idaho Case Study: Rock Creek Ranch, an Example of Collaborative Restoration and Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/best-student-paper-symposium/36103">Non-Native Fish Removal By Short-Term Reservoir Draining to Streambed</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/38644">A Fish out of Water: A Federal Prosecutor’s Perspective in States That Have Legalized Marijuana</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/40587">An Approach to Improving Survivorship in a Marine Finfish Replenishment Program in Southern California</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/39768">Engagement in the Diversity Joint Venture for Conservation Careers</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/reno-vating-habitat-for-fish-and-wildlife-a-film-festival-highlighting-collaborative-habitat-conservation-and-its-benefits-day-1/41651">Session 2 – Some Like It Salty: Examples of Coastal Conservation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/communication-the-key-to-effective-natural-resource-programs/35065">Understanding Your Audience: Making Your Science Speak to Everyone</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/34827">Close-Kin Mark-Recapture: Theory and Applications</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35182">What Is Work/Life Balance?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35127">Use of Classroom Technologies to Open up Time for Deeper Discussions</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35174">Form, Function, and Future of Riparian Buffers on Private Forestlands</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35095">Winter Is Coming: Temperature Dependent Virulence of Batrachochytrium Salamandrivorans</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/35075">Revising the Species Status Assessment for Decision Support in Endangered Species Management</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/natural-resource-conservation-in-agricultural-landscapes-challenges-and-opportunties-part-i/35035">A Historical Perspective on Natural Resource Conservation in Agricultural Landscapes</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/36583">Who’s Bears Are They Anyway? Metapopulation Dynamics of Polar Bears in Western Hudson Bay</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/35757">Thermal Ecology and Habitat Selection of Scaled Quail</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/38327">Using Shinyr for Web-Based and Interagency Sharing of Wildlife Survey Data</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-in-a-changing-climate/36293">Rethinking Wetland Conservation in a Water-Starved Future</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-birds-i/37608">Spatial Prioritization for an Apex Scavenger, the Andean Condor</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35017">Plant Secondary Compounds; Why Animals Hate Them but Love the Plants They’Re in.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/35694">Forest Structure and Snow Depth Alter the Movement and Subsequent Expenditure of a Forest Carnivore, the Pacific Marten</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/38241">Can a Bite in the Butt Change Black Bear Behavior? Effects of Aversive Conditioning on Predictors of Bear-Human Conflict</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/35849">If You Build It, They Will Come: Avian Utilization, Species Richness, and Nest Success at a Large-Scale Photovoltaic Solar Facility</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/36984">Integrating Age Data to Improve Estimation of Polar Bear Abundance, Survival, and Recruitment in Open-Population Jolly-Seber Models</a></td>
+</tr>
+<tr class="even">
+<td align="center">13:30</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/39425">Deep Enough to Swim? Hydraulic Controls on Coho Salmon Smolt Outmigration in the Russian River Watershed, CA</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/38946">Habitat and Climate Factors Affecting Juvenile Spring Chinook Salmon Recruitment and Life-History Expression in an Endangered Population</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/38465">Dynamic Ensemble Models to Predict Whale Distributions and Anthropogenic Risk Exposure in Near-Real Time</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/38591">The Ecology of the Internet: Lessons Learned for Science Communicators from a Career in Journalism</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/40113">Black Carp Reproductive Ecology in the Upper Mississippi River</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/39277">An Interactive User Interface for Mapping and Prioritizing Migration Corridors</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/40639">Estimation of Both Natural and Fishing Mortality Via Tag-Recapture Data Enhances Understanding of Population Dynamics: The Case of the Delaware River Spawning Stock of Striped Bass.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/38733">Noninvasive Genetics of Aardvarks to Illuminate Landcape Connectivity and Phylogeographic History</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/40320">The North American Freshwater Migratory Fish Database (NOAMAD): Characterizing the Migratory Patterns of Freshwater Fishes of Canada, the United States, and Mexico</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/36612">Simulating the Use of Sex Ratio Manipulation for the Eradication of Invasive Brook Trout</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-resilience-can-fish-wildlife-and-humans-adapt-to-shifts-in-wildfire-disturbance-part-i/37051">Fire and Wildlife in Southeastern Ecosystems</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/38594">Effects of Regulations and Pricing on Participation in Recreational Fishing</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/36508">Aquatic Biodiversity Conservation in the Context of Multiple Use Management of National Forest System Lands</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/38753">Lake Physics and Fish Habitat: Basin Characteristics, Sedimentation Zones and Habitat Partitioning Among Benthic Feeding Fish</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/40193">Projections for Adaptive Management of Biomass and Yield in Marine Protected Areas</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/39467">Changing Agroecosystems and Impacts on Biodiversity in a Food Importing Country</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/39547">Representing Science: Why Sometimes Observing Is Not Enough and Techniques for Weighing in</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/36057">Total Dissolved Gas and Gas Bubble Disease in the Lower Clark Fork River: What Have We Learned in the Last 20 Years?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/39010">Monitoring a Rare and Imperiled Fish Species to Inform Water Management Actions</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/39123">Identifying Environmental Drivers of Golden Tilefish Dynamics in the Northwest Atlantic</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/40224">Incision Healing Rate of Shortnose Gars Using Novel Surgical Methods for Transmitter Implantation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/40292">Extension to Incorporate Local and Traditional Ecological Knowledge into Tidal Power Development Considerations</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/38461">Communication and Collaboration within the Atlantic Salmon Governance Structure of Maine</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/39919">Adaptation of Technology: A Glimpse into the Future of Aquatic Environmental DNA Monitoring in the Sacramento-San Joaquin Delta.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/38840">Riparian Resilience in the Face of Interacting Disturbances: Wildfire, Erosion and Beaver (Castor canadensis) in Grazed Riparian Systems of the Western United States.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/best-student-paper-symposium/35981">To Catch a Predator: Sacramento River Predator Diet Analysis</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/39436">It’s a Trap! Cannabis Cultivation Sites As Ecological and Evolutionary Traps for Wildlife</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/39965">Advancing Kootenai River Burbot Restoration: Integrating Parental Based Tagging into Conservation Aquaculture to Support Research, Monitoring, and Evaluation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40223">Student Perspective of D&amp;I Programs</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/communication-the-key-to-effective-natural-resource-programs/35062">Conservation through Outreach and Education: From Adopt-a-Trout to Fishmt</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35189">Balancing Life As a Professional with Family</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35134">Immersive Field Experiences As Part of a Curriculum</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35893">Significant Green Tree Retention in the Southern United States Contributes to Biodiversity</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35096">Host Density and Habitat Structure Influence Contact Rates and Transmission of Batrachochytrium Salamandrivorans</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/35245">Incorporating Genetic Considerations into Species Status Assessments</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/natural-resource-conservation-in-agricultural-landscapes-challenges-and-opportunties-part-i/35034">Influence of the CRP and National-Scale Coordinated Management on Northern Bobwhite and Grassland Birds</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/37443">The Bear Necessities: Consensus Model Identification of Black Bear Habitat throughout the State of Florida</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/38005">Resource Selection in a before-after-Control-Impact Framework: Assessing Habitat Restoration Effects on Sage-Grouse Seasonal Habitat</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/38221">A Novel Automated Method for Point-Based Change Detection Improves the Accuracy of Colonial Nesting Bird Counts</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-in-a-changing-climate/37176">An Unsung Risk to Arctic Marine Mammal Populations: Population Monitoring Research Threatened By Climate Change</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-birds-i/35764">Short-Eared Owl Population Dynamics in the Western United States</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35018">Natural Diets Promote Retention of Native Microflora of Captive Wildlife</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/38082">Estimating Densities of a Patchily Distributed, Sagebrush Specialist across the Great Basin.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/36469">Who Takes the Bait? Experimental and Hunter Observations of Non-Target Species Use of Bear Hunter Bait Sites</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/38014">Energy Development in Ungulate Migration Routes: How Much Is Too Much?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/35325">Is Your Multi-Stage Model Selection Strategy Affecting Your Inferences?</a></td>
+</tr>
+<tr class="odd">
+<td align="center">13:50</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/38824">The Physiological Associations between Infectious Agents and Ocean Migrating Juvenile Chinook Salmon (Oncorhynchus tshawytscha)</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/40423">Population Viability of Snake River Spring/Summer Chinook Salmon Under Climate Change Scenarios Based on Life Cycle Modelling</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/39184">Effects of Variability in Ship Traffic and Whale Distributions on the Risk of Ships Striking Whales</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/38863">Communicating Marine Policy in an Era of Climate Change</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/37106">An Emerging Aquatic Invasive Species in Saskatchewan: Prussian Carp Distribution and Ecology</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/39878">A Decision-Making Tool for Evaluating Biological and Statistical Thresholds for Survival Analysis of Migrating Fishes</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/39308">3D Movement and Habitat Use of Young White Sharks (Carcharodon carcharias) in the Northwest Atlantic Ocean</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/39015">Biodiversity of Cottus in Western North America: A Molecular Perspective</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/39631">Coupling Migratory Fish Distribution Models and Large Dam Data to Prioritize Fish Passage Restoration: A Case Study in the Upper Mississippi River</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40130">Brook Trout and Brown Trout Suppression As a Means to Benefit Migratory Bull Trout in a Northwest Montana Stream</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-resilience-can-fish-wildlife-and-humans-adapt-to-shifts-in-wildfire-disturbance-part-i/39938">A Risk-Benefit Context for Assessing Wildfire Effects on Water Quality and Biotic Integrity</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/40720">Effects of Wildlife Density on Hunter Satisfaction</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/38518">Little Tennessee River Basin Native Fish Conservation Partnership: Aquatic Conservation on a Landscape Scale</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/38663">Fish Community Response to Rapidly Changing Conditions in the Nearshore Beaufort Sea</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/39950">Reconstructing Salmon Runs to Sustainable Fisheries Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/39569">The Changing Nature of the Great Lakes Lake Whitefish (Coregonus clupeaformis) Supply Chain and Implications for Their Value</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/35903">Thirty Years Swimming Upstream As an Onsite U.S. Environmental Protection Agency Contractor</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/40332">Modeling to Evaluate the Effects of Missouri River Hydrosystem Operations on Piping Plovers and Least Terns</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/40584">Identifying Estuary Nursery Habitats with Size-Spectra Analysis</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/38681">Environmental and Biological Drivers of Intra- and Inter-Specific Resource Use in Golden (Lopholatilus chamaelonticeps) &amp; Blueline (Caulolatilus microps) Tilefish in the Mid-Atlantic</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/39918">Determining an Optimal 3-D Acoustic Telemetry Array Configuration in Aquatic Environment: Solution, Approach, and Field Verification</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/38395">A Hook and Line Survey from Rhode Island to North Carolina to Determine Spatial Population Dynamics of Black Sea Bass</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/38484">A Strategic Plan for Monitoring Birds in the Gulf of Mexico: Translating Stakeholder Values into Priorities</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/38908">Using Wagon-Wheel Antennas to Pioneer the West: How New PIT Detection Technology Has Expanded Our Knowledge on Imperiled Fish Conservation and Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/39192">Putting Beavers to Work in Alberta, Canada</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/best-student-paper-symposium/36212">Patterns in Size Distribution, Catch, and Habitat Use of Rockfish (Sebastes spp.) in Fisheries-Independent and Fisheries-Dependent Data</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/38533">Water Use Practices in California’s Regulated Cannabis Industry: Seasonal Patterns, Storage Insufficiency, and the Shift to Groundwater</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/38810">How Might the Hatchery Environment Contribute to the Differences between Hatchery and Wild Salmonids and Centrarchids</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40442">Moving Toward a Welcoming Culture By Addressing Sexual Harassment</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/communication-the-key-to-effective-natural-resource-programs/35066">Promoting Science for the Common Good: Working with the Media</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/34829">Identifying Kin Pairs for Close-Kin Mark-Recapture: Statistical-Genetic Models, Genetic Markers, and Software</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35193">Managing/Balancing Life with Elder Care</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35135">Innovative Approaches to Natural Resource Education: Active Learning and Rocking out</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35176">Small Mammal Species Richness within Riparian Associated Retention Patches</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35097">Multiple Transmission Pathways in Mathematical Models of Bsal</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/35081">Incorporating Genetic Diversity Information into a Representation Analysis for the Eastern Hellbender Species Status Assessment</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/natural-resource-conservation-in-agricultural-landscapes-challenges-and-opportunties-part-i/35037">Gulf Hypoxia and Nutrient Reduction Strategies – Is There Anything Fishy Going on in Iowa?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/37439">Spatial and Survival Analyses of Rehabilitated Black Bear (Ursus americanus) Cubs</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/37001">How Can Breeding Stage-Specific Estimates of Movements and Space Use of Female Lesser Prairie-Chickens Aid Conservation Efforts?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/37175">Development and Testing of a an Automated Scent Dispenser for Long-Duration, over-Winter Camera-Trap Surveys of Carnivores</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-in-a-changing-climate/36537">Landscape Genetics Reveal Broad and Fine-Scale Population Structure Due to Landscape Features and Climate History in the Northern Leopard Frog in North Dakota</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-birds-i/38111">Rapid and Varied Responses of Forest Passerines to Climate Change in California, USA.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35019">Nutrient Manipulation Differentially Affects Gut Anatomy and Microbiome Structure in Rodents with Distinct Dietary Niches</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/37820">Coyotes Coexist with Wolves in a Managed Landscape through Temporal Partitioning</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/36709">Public Attitudes Toward Hunting, Fishing, Trapping, and Animal Rights Issues</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/36339">The Impact of Oil and Gas Development on Duck Production in the Prairie Pothole Region</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/37562">Counting Cougars: Density Estimates of Unmarked, Low Density Populations with Camera Traps</a></td>
+</tr>
+<tr class="even">
+<td align="center">14:10</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/40649">Disturbance, Climate, and Habitat: Understanding the Distribution of Chinook Salmon Redds in a Large River Network.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/39427">Thermal Exposure of Chinook Salmon throughout Their Freshwater Life History</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/40608">Assessing Patterns of Shipping Traffic to Inform Blue Whale Ship Strike Risk in the Channel Islands</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/39971">Conservation When the Train Has Already Left the Station: Ecology of Amphibians in Changing and Changed Ecosystems</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/39254">Pacific Islands Region Newsroom</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/38705">Reproductive Ecology of Bigheaded Carps Along the Upper Mississippi River Invasion Front</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/39910">R Shiny As a Platform for Interactive and Dynamic in-Season Information on Fraser River Sockeye Salmon</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/39215">Connecting the Dots: Refining Blacktip Shark Movement</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/38658">Identification and Screening of New Diagnostic SNPs for Detecting Hybridization and Introgression between Rainbow Trout and Yellowstone Cutthroat Trout</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/40287">Caught between a Rock and a Hard Place: Monitoring Chinook Salmon in California’s Central Valley</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/37350">One Fish, Two Fish, 15,000 Fish: Brook Trout Suppression for Bull Trout Recovery in the Upper Malheur</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-resilience-can-fish-wildlife-and-humans-adapt-to-shifts-in-wildfire-disturbance-part-i/38839">Wildfire’s Impacts on Water Quality and Aquatic Life: A Case Study from the Upper Rio Grande</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/37018">Non-Linear Responses of Angler Harvest Rates and Size Selectivity to Shifts in Population Abundance, Size Structure, and Regulations</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/38680">Using a Regional Priority Species List to Focus and Coordinate Collaborative Conservation across the Southeast</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/38926">Haddock without Cod: A Habitat Model to Help Recreational Anglers Catch One Species and Avoid Another</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/38324">A Temporally-Stratified Extension of Space-for-Time Cormack-Jolly-Seber for Migratory Fish</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/40069">Quantifying the Allocation of Angling Effort across a Fisheries Landscape</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/38948">The View from the Trenches: Perspectives and Advice from a Professional Scientist Advocate</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/40357">Agent-Based Modeling to Design Wildlife-Friendly Renewable Energy Projects</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/37060">Valuing Land Conservation to Support Estuarine Biotic Health in the Gulf of Mexico – a Hierarchical Approach</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/39176">Using Monitoring and Trophodynamics Data to Explain Patterns in Resource Use and Recruitment of Managed Reef Fishes on the West Florida Shelf</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/39142">Evaluation of Gill Net Design to Sample Fishes in Kansas Imoundments</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/40610">An Interdisciplinary Approach for Disseminating Tackle Recommendations to Promote Sustainability of the Gulf of Maine Recreational Groundfish Fishery</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/39111">Evaluating and Improving Lake Management at Broad Scales: The Payoffs of Stakeholder Collaboration in Research</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/38514">Wells Dam Juvenile Bypass Baffle PIT Detection System</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/39204">An Alberta Perspective: Beavers, Our Watershed Partner – a Community Engagement Initiative</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/best-student-paper-symposium/36071">Genetic Architecture of Early Life History Traits for Channel Catfish, Ictalurus Punctatus <U+2640> × Blue Catfish, I. Furcatus <U+2642> Hybrid Production</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/39187">A Paired Watershed Comparison of Hydrological and Biological Condition in Streams with and without Cannabis Cultivation–Part 1: Hydrologic Condition</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/40593">Using Bioelectrical Impedance Analysis to Measure, Monitor, Track and Compare Fish Health in the Hatchery and in the Wild</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40447">Addressing Diversity, Equity, and Inclusion in Western Division AFS: Understanding the Issues</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/34830">Close-Kin Estimates of Census Size and Effective Population Size</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35196">Work/Life Balance Issues for Single People</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35136">Students in Transition: Addressing Needs of Transfer and Non-Traditional Students</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35180">Response of Stream-Associated Salamanders to Timber Harvest with Alternative Riparian Buffer Configurations</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35105">Chytrid Fungal Co-Infections in Amphibians: What Do We Know and What Should We Expect?”</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/35077">Candy Darter Status Assessment: A Case Study in Scientific Collaboration</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/natural-resource-conservation-in-agricultural-landscapes-challenges-and-opportunties-part-i/35038">Agricultural, Invasive Species, and Altered Hydrology Impacts on Fish Assemblages of a Large River</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/36880">Do American Black Bears Track Resource Waves in Yellowstone National Park?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/36816">Quail and Rain: Does Management Matter?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/36213">Functionality and Effectiveness of Two Solar-Powered GPS Transmitters Fitted on Greater Sage-Grouse in Utah</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-in-a-changing-climate/37808">Climate Adaptation Science in the Pacific Northwest: Building a Collaborative Network for Responding to Climate Change</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-birds-i/37023">Movement of Canada Geese in Urban and Rural Areas of Iowa</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35020">How Plants Outwit Their Consumers. What Plant Chemicals Do to Defeat Specialist Herbivores.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/35272">Winter Prevalence of Intestinal Protozoaries and Food Relationship in Coyote Faeces in Samalayuca, Mexico</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/38233">Behavioral Responses of Male Elk to Hunting Risk</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/37678">Evaluating Risk to Bats from Wind Development: State of Knowledge and Future Directions</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/37032">Developing an Occupancy-Based Monitoring Framework for Wolverines in the Cascades</a></td>
+</tr>
+<tr class="odd">
+<td align="center">14:30</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/39137">Evaluation of Fish Rescue Programs across Varying Drought Conditions</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/40436">Dam Removal, Increased Stream Flow, and Habitat Restoration for Spring Chinook in Clear Creek and Battle Creek</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/40568">Dynamic Satellite Based Seascapes As a Tool to Understand Distribution of Micronekton Forage Species Assemblages in the California Current Ecosystem</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/39238">Multi-Scale Changes in Montane Areas of the Great Basin</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/38253">Sunday School: Systems-Literacy Success through Short, Teacher-Led Family Field Trips</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/38452">Biotic and Abiotic Factors Influencing Silver Carp Early Life History</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/38799">Utilization of Web Applications in a Salmon and Steelhead Monitoring and Recovery Program</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/39232">Living on the Edge: Shark Movements in a Category 5 Hurricane</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/37164">Monitoring Anadromous Fish Population Dynamics Using Environmental DNA</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/38856">Population Dynamics of Threatened Lahontan Cutthroat Trout in Summit Lake (USA)</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40585">Spatial Patterns and Environmental Drivers of Effective Number of Breeders in Eastern Brook Trout Populations</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-resilience-can-fish-wildlife-and-humans-adapt-to-shifts-in-wildfire-disturbance-part-i/39222">Wildfire Smoke Cools Summer River and Stream Water Temperature</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/38387">Harvest Regulations Can Affect the Evolutionary Impacts of Harvests on Fish and Wildlife.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/40612">Exploring the Importance of Hydrologic and Environmental Gradients and Thresholds on Patterns of Fish Biodiversity Composition Using a Gradient Forest Approach.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/38887">The Challenges of Modeling the Distribution of Reef Fishes: Lessons from a Massive External Validation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/40421">Abundance and Outmigration Timing for Naturally-Produced Snake River Fall Chinook Salmon over a Period of Population Recovery</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/38319">Long Term Trends in Fishery Yield and Effort in Lake Constance, Europe</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/40076">Science and the Public Interest: Empowering Advocates through Communication and Collaboration</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/39964">Kootenai River Floodplain Ecosystem Operational Loss Assessment</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/35808">Practical Applications of the Pacific Marine &amp; Estuarine Fish Habitat Partnership Regional Estuarine Data Tools</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/40342">Using an Integrative Tracking Network to Monitor Multi-Species Movement at the Eco-Region Scale</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/38906">Standardization in Measuring and Reporting Fish Habitat Association Data: Application within Gulf Slope Drainages of Texas and Louisiana</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/37826">Engaging Stakeholders in Cooperative Research to Track Tarpon across the Northern Gulf of Mexico</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/40055">Making Science Useful to Stakeholders in the Context of Tidal Power Development</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/39996">The Aquatic Habitat Sampling Platform: A Non-Traditional Look at Traditional Estuary Questions</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/40064">Beaver Activity Alters Ecosystem Function and Macroinvertebrate Communities in a Degraded Stream Ecosystem</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/best-student-paper-symposium/36513">Examining Egg Characteristics As a Possible Mechanism for Striped Bass Recruitment Failure in North Carolina Coastal Rivers</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/38415">A Paired Watershed Comparison of Hydrological and Biological Condition in Streams with and without Cannabis Cultivation–Part 2: Biological Condition</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/40765">Successful Hormonal Induction of Spawning in Bonefish (Albula vulpes), Description of Early Ontogeny, and Characterization of Lipid Utilization</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40517">Removing the Stigma: Mental Health in the Natural Resources Profession</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/communication-the-key-to-effective-natural-resource-programs/35068">Facilitated Dialogue: A Tool to Communicate Controversial Science Topics</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/34826">Inference for Abundance, Recruitment, Survival, and Parentage Using Molecular Data</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35204">Panel Discussion Work/Life Balance Re Families/Elder Care/Singles</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35137">Empowering Your Teaching with a Blueprint from Goals to Objectives and Multiple Assessments</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35895">The Role of Thermal Refugia in the Persistence of Terrestrial Salamanders in Intensively Managed Forests</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/40848">Monarch Butterfly Population Viability Modeling to Predict Future Viability in the Eastern and Western Populations</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/natural-resource-conservation-in-agricultural-landscapes-challenges-and-opportunties-part-i/35039">Impacts of Agricultural Landscapes on Fish Physiology</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/38124">A Meta-Analytic Approach to Better Understanding Global Attitudes Towards Bears and Their Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/38028">Integrating Nest Site Selection and Survival Consequences for Greater Sage-Grouse in a Multi-Scale Habitat Assessment</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/38228">Vegetation and Elk Forage Responses to Habitat Manipulations: Applications of the Rangeland Analysis Platform</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-in-a-changing-climate/37341">Assessing Effects of Climate and Habitat Change on the Breeding Phenology of Songbirds</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-birds-i/36840">Comparing the Utility of Integrated and Non-Integrated Analysis Results in a Conservation Decision Context</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35021">How Herbivores Outwit Their Plants over Evolutionary Time; Sage-Grouse Versus Sagebrush.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/36656">Diet, Temperature and Reproduction As Drivers of Forage Consumption in Female Moose</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/37609">Impacts of Transient Human Communities on Riparian Habitat and Wildlife, and Biological Field Staff Monitoring Practices and Safety</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/37135">Using Marine Bird Vulnerability Indices with High-Resolution Digital Aerial Survey Data to Inform Offshore Wind Siting</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/36487">Environmental Covariates Associated with Fisher (Pekania pennanti) Occupancy in Southeast Alaska</a></td>
+</tr>
+<tr class="even">
+<td align="center">15:00</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35875">Chytridiomycosis in Mexico: Strains, Infection and Potential Risk</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center">15:20</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/39434">Gene Transcription Reveals Physiological Response in Chinook Salmon (Oncorhynchus tshawytscha) during Long Migration</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/40205">Mismatching Phenotype and Genotype; Resolving the Source of Recolonization By Threatened Chinook Salmon from the California Central Valley</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/39843">Seasonal Occurrence and Distributions of Billfish Related to Climate Variability in the Eastern Pacific Ocean</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/39446">Flow Regime Influences the Trajectory of Ecosystem Transformation in Tropical Island Urban Streams</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/39230">When “the Blob” Attacks: Conveying Ecosystem Science through Real-Time News</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/38511">Community Shifts in the Middle Mississippi River Relative to the Introduction of Two Hypophthalmichthys Carps</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/40118">A Stakeholder Engagement Tool to Explore Recreational Management Strategies for Red Snapper in the Gulf of Mexico.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/39018">Synthesis of Acoustic, Biologging, and Machine Learning Methods Enhances Monitoring of Blue Whales from Individual to Population Scales</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/39040">Experimental Evaluation of Abundance Estimates Using Environmental DNA across Flow Regimes and Aquatic Taxonomic Groups.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/39093">Free-Flowing Rivers &amp; Migratory Fish Status for Southern Africa</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40519">Passing the Impassable: Brook Trout Population Response to Hurricane Irene</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-resilience-can-fish-wildlife-and-humans-adapt-to-shifts-in-wildfire-disturbance-part-i/40057">Bottom-up Trophic Cascade after Wildfire and Post-Fire Salvage Logging in Canadian Rocky Mountain Streams</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/38702">Evolving Regulations for a Changing World</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/38690">Connecting Land and Water through the Southeast Conservation Blueprint</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/40494">Predicting Hydrologic Disturbance of Streams Using Species Occurrence Data</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/40356">Integrating the Effect of Time-Varying Covariates within a Proportional Hazards Survival Model for Juvenile Chinook Salmon in the Yakima River, WA</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/38483">Policy with Teeth: A Global Assessment of Fisheries Initiatives to Reduce Chondricthyan Bycatch</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/39693">For Sustainable Fisheries We Need Family Planning</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/35669">Managing Hydropower Dam Releases for Water Users and Imperiled Cold- and Warm-Water Fishes</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/35939">Foul Play: Long-Term Data Trends of the Epibenthic Community of Oyster Bars in Maryland</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/40524">Habitat-Specific Recruitment of Southern Flounder to Alabama’s Fisheries</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/35342">Paired-Net Sampling and Capture Efficiency Probability for Rio Grande Silvery Minnow and Other Native Fish in the Rio Grande, New Mexico</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/39713">Your Fish Was How Big? Cooperative Research Begins with a Conversation.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/39709">Integrating Stakeholder Engagement into Project Design: The Lenfest Approach</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/38377">The Use of Carbon Dioxide to Remove Resident Piscivorous Striped Bass (Morone saxatilis) from the Tracy Fish Collection Facility in the Sacramento-San Joaquin River Delta, California</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/38710">Can Beavers Mitigate Non-Point Source Pollution?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/best-student-paper-symposium/38898">Understanding Responses of Stream Fish Assemblages to Urbanization in the Southeastern United States</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/40455">The Growing Web of Effects on Forest Mammals from Cannabis Cultivation on Public Lands</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/36173">Developing Trojan Sex Chromosome Carriers (YY Males) to Control Nuisance Fish Populations in the Southwest</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40607">A Three Year Reflective Look on AFS D&amp;I Activities: Is It Working?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/reno-vating-habitat-for-fish-and-wildlife-a-film-festival-highlighting-collaborative-habitat-conservation-and-its-benefits-day-1/41652">Session 3 – Rivers by Freshwater Illustrated</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/communication-the-key-to-effective-natural-resource-programs/35060">Death By Powerpoint: Using Technology to Communicate Science</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/34828">Statistical Design of Close Kin Mark Recapture Experiments</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35198">Managing/Balancing Life As a Student</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35138">Providing Soft-Skill Training Online for Fish and Wildlife Students</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35896">Differential Responses of Amphibian and Reptile Assemblages to Size of Riparian Buffers within Managed Forest</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35099">Using Edna Technology to Detect Bsal – Implications for Surveillance</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/35078">Using Expert Input to Inform Species Status Assessments Under the ESA</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/natural-resource-conservation-in-agricultural-landscapes-challenges-and-opportunties-part-i/35040">Scalar Effects of the Farm Bill on the Environment: From the Office to the Landscape</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/37516">Quantifying the Energetic Cost of Movement in Grizzly Bears Using GPS Collar Data</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/37871">Northern Bobwhite Juvenile Survival on Extensive Prairies and Traditionally Managed Conservation Areas</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/36849">Unmanned Aerial Vehicles for the Detection and Monitoring of Moose Calves in Northeastern Minnesota</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-in-a-changing-climate/38033">Adaptive Capacity: The Linchpin and Frontier for Understanding Climate-Change Vulnerability</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-birds-i/38210">Diet Composition and Provisioning of Ferruginous Hawk Nestlings in Agricultural and Grazing-Based Landscapes in the Northern Great Plains</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35022">Towards Functional Community Ecology in the Metagenomes of Herbivore Specialists</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/36636">Tracking Winter Protein Stores for Productivity of Female Moose in Alaska</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/38024">Taking Nothing for Granite: Wildlife Usage of Historic Rock Walls at Fort Drum Military Installation, New York</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/37423">Disease and Wind Energy Development Interact to Restructure Bat Communities in Eastern North America</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/36224">Problematic Poisson Distribution</a></td>
+</tr>
+<tr class="even">
+<td align="center">15:40</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/40089">Managing Gulf of Maine Atlantic Salmon (Salmo salar) in a Changing Climate</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/38861">The Genetic Basis of Adult Migration Type in Chinook and Applications for Conservation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/39297">Developing Alternative Conservation Measures for Bigeye Tuna in the Eastern Pacific Ocean: A Dynamic Ocean Management Approach</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/39576">Managing for Socio-Ecological Change in the Mojave Desert</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/40025">Give ‘Em What They Want: Repackaging Science into Content People Want to Consume</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/36757">Evaluating Upstream Passages By Bigheaded Carp at a Mississippi River High-Head Dam</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-role-of-interactive-user-interfaces-in-fisheries-and-wildlife-science/40538">Interactive Data Exploration of Smolt to Adult Return Rate (SAR) Timeseries for Salmonids in the Interior Columbia River Basin</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/40212">Passive Integrated Transponder and Radio Telemetry Data Reveal the Effects of Water Management and Climatic Conditions on the Use of Critical Habitat By Endangered Suckers</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/38127">Designing Environmental DNA Surveys in Complex Lentic Systems: Backpack Sampling for Rare Amphibians in Sierra Nevada Meadows.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/38714">Migratory Fish and Tributary Dams in the Mekong: What Do We Actually Know?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40305">Brook Trout Population Responses to Climate Variation in Southern Appalachian Streams</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-resilience-can-fish-wildlife-and-humans-adapt-to-shifts-in-wildfire-disturbance-part-i/40545">Linking Post-Fire Stream Responses to Watershed Characteristics across the Pacific Northwest</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/36314">Making Harvest Management Decisions Robust to Uncertainty</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/39120">Why Does a Power Company Care about Mussels and Trees?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/38996">Quantifying Spatio-Temporal Variability in Thermal Patterns Using a Fiber-Optic Distributed Temperature Sensing System</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/40156">Survival Estimates from an N-Mixture Model for Young-of-the-Year Largemouth Bass within the Sacramento-San Joaquin Delta</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/35751">Fishing with Pesticides As a Common Practice in Tropical Streams: Literature Review and Case Study from Nicaragua</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/39508">Overconsumption of Natural Resource – Problems and Solutions</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/39866">Science in Action or Science Inaction: The Use of Best Available Science in the Ferc Hydropower Relicensing Process</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/37812">Delta Juvenile Fish Monitoring Program: Over 40 Years of Monitoring and Nine Million Fishes Recorded</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/40561">Environmental Drivers of Southern Flounder Juvenile Recruitment in Alabama Coastal Waters</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/39095">The Effect of Pulse Frequency on Capture Efficiency and Injury of Trout Sampled with Backpack Electrofishing</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/40695">The California Collaborative Fisheries Research Program: A Statewide Partnership Among Scientists, Managers, and Recreational and Professional Fishermen</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/38939">The Human Dimensions Revolution for Florida Fish and Wildlife</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/39387">Assessing the Use of Predation-Detection Acoustic Transmitters to Examine Predation Loss of Juvenile Chinook Salmon</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/40400">Temperature and Hydrological Impacts of Beaver-Based Stream Restoration: Hypotheses, Models and Data.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/best-student-paper-symposium/39150">Linking Reservoir Characteristics to Striped Bass Population Dynamics</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/38381">Evaluating Pesticides Entering Wastewater Catchments from Regulated Indoor Cannabis Cultivation in California</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/37817">Search for the Smoking Gun (PART I): Identifying and Addressing the Causes of Postrelease Morbidity and Mortality of Hatchery-Reared Snake River Sockeye Salmon Smolts</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40613">The Equal Opportunity Section of AFS: What’s in Your Tackle Box?</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/34831">Validation of the Close Kin Mark Recapture Method for Estimating Abundance</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35200">Work/Life Balance Issues for Students</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35139">Loping Beyond Undergraduate Training: The Online Graduate Program at the University of Nebraska at Kearney</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35897">Conservation of a Crayfish Species of Concern on a Managed Forest Landscape in Mississippi</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35079">Proactive Conservation: Developing Strategies to Combat the Salamander-Eating Fungus</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/35072">Eastern Black Rail Dynamic Occupancy and Patch Persistence Modeling to Predict Future Redundancy and Resiliency</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/natural-resource-conservation-in-agricultural-landscapes-challenges-and-opportunties-part-i/35041">Rangeland Management Decisions By Producers: Wildlife Management Is Not Their Primary Goal</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/37482">Maternal Weight Dynamics in Fall and Hibernation Influence Embryonic Implantation Time, Litter Weight, and Cub Body Weight at Spring Hibernation Arousal in American Black Bears</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/37782">Sage-Grouse Definitely Avoid Trees, or Do They? a Case for Providing a Surrogate Niche</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/35809">Delineating the Origin of Northern Saw-Whet Owls in Indiana Using Stable Isotope Analysis</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-in-a-changing-climate/38197">Boreal Songbird Occupancy in Potential Climate Change Refugia: Consequences for the Future</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-birds-i/36992">Recovery in Avian Abundance Following Intensive Forest Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35023">Stealing Good Ideas from Cows: In-Vitro Gut Systems to Test Microbial Manipulations and Their Potential Use in “Soft Releases” of Wildlife.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/38216">Resource Selection in Female Desert Bighorn Sheep: Tradeoffs Associated with Reproduction</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/36125">The Effects of Human Disturbance and Drought on Mammalian Mesopredators in California</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/36392">Landscape Features Associated with Migratory Bat Fatalities at Wind Energy Facilities</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/36859">Predicting Habitat Suitability for a Threatened Ground Squirrel: Balancing Model Complexity and Spatial Transferability</a></td>
+</tr>
+<tr class="odd">
+<td align="center">16:00</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/40449">Climate Vulnerability Assessment for Pacific Salmon and Steelhead in the California Current Large Marine Ecosystem</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/38369">The Status of Central Valley Spring-Run Chinook Salmon in the San Joaquin River</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/dynamic-ocean-management-moving-away-from-drawing-boxes-in-the-sand/41015">Concluding Remarks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/39872">Restoring Carter Lake, Overcoming Political Paralysis</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/38490">Communicating Real-World Research to Students</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/39117">Ongoing Efforts to Control Grass Carp in the Detroit River and Tributaries to Western Lake Erie</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/39396">Seasonal Post Translocation Movements of Paddlefish in the Alabama River</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/36154">Using Environmental DNA to Validate the Occurrence and Habitat Associations of Torrent Salamanders to Inform ESA-Listing Decisions</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/39673">Migratory Freshwater Fishes in South Asia: Status, Trends and Opportunities</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40439">Brook Trout, Climate Change, and Appalachian Riverscapes</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-resilience-can-fish-wildlife-and-humans-adapt-to-shifts-in-wildfire-disturbance-part-i/39818">Gaging the Importance: Hydrologic Regime Characterization for Wildfire-Impacted Streams in Changing Boreal Ecosystems</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/40343">Individual Heterogeneity in Vital Rates and Harvest Strategies: Quantifying the “Doomed Surplus” Hypothesis</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/41666">The Weber River Partnership: How Fish Gained Relevance Through a Recently Formed Watershed Group</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/39560">Fish Habitat Modeling: A Comparative Study</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/40281">Harvest Slots As a Management Tool to Improve Marine Recreational Fishing Opportunities and Sustainability in Gulf of Mexico Red Snapper</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-as-coupled-human-and-natural-systems/35622">Lake Michigan Coastal Stakeholders’ Risk Perceptions and Motivations for Stewardship</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/40761">Economic Growth: The 800-Pound Gorilla at National Wildlife Refuge System Headquarters</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/40258">Understanding the Environmental Impact Study and Mitigation Life Cycle in Federal Energy Regulatory Commission Hydropower Licenses</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/38778">Mad First Impressions: The Seasonal Fish Communities of the Mad River Estuary and Two Estuarine Marine Protected Areas</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/40578">Integrated Diet Examination of Recreationally Landed Swordfish, Xiphias Gladius, in the North Central Gulf of Mexico</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/39442">Effect of Day and Night Release on Downstream Migration Survival of Hatchery-Reared Chinook Salmon Smolts</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/40562">The Evolution of Fisheries Research in California: From Short-Term Research to Long-Term Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/40079">Engaging Governmental and Private Stakeholders to Implement and Maintain Adaptive Management Projects – Challenges and Accomplishments</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/40583">Paired Satellite and Acoustic Tagging to Monitor the Movements of Bigheaded Carp in the Upper Illinois River</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/40508">Predicting the Distribution of Beaver Damming in the Umpqua River Watershed, Oregon</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/39261">Automated Remote Cannabis Detection to Aid Enforcement and Conservation Efforts on Public Lands</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/39593">Search for the Smoking Gun (PART II): Evaluation of Postrelease Morbidity and Mortality of Hatchery-Reared Snake River Sockeye Salmon Smolts</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40667">Finding Your Village</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/communication-the-key-to-effective-natural-resource-programs/35067">Managing the Mysteries of the Media</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/34832">Exploring Close-Kin Mark-Recapture As a Method for Assessing Bearded Seal Population Abundance and Status</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35202">Role of Physical/Mental Health in Work/Life Balance</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35140">The Master of Fisheries and Aquatic Sciences at the University of Florida</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35178">Using Existing Datasets to Investigate the Effects of BMP Compliance on the Presence or Persistence of at-Risk Aquatics</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/35102">Disease Decisions Can be Rational Choices</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/35085">Incorporating Climate Science into Species Status Assessments</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/natural-resource-conservation-in-agricultural-landscapes-challenges-and-opportunties-part-i/35036">Watershed Conservation in Agricultural Lands Under the Proposed Wotus Rule</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/38213">Going Against the Flow: Spatiotemporal Patterns of Ice Drift and Polar Bear Movement in Hudson Bay</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/37521">Effects of Predator Reduction on Northern Bobwhite Nest Success and Chick Survival in the Rolling Plains of Texas</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/37829">Acoustic Indices for Monitoring Avian Biodiversity in Sagebrush and Pinyon-Juniper Habitats</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-in-a-changing-climate/37509">Persistence and Range Retraction of American Pika in Northwestern Nevada</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-birds-i/37204">Big Data from Remote Tracking of Raptors: A Case Study of Golden Eagles in Western North America</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35024">Tradeoffs on the Landscape for Deer: How Fearscapes Interact with Foodscapes</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/38232">“Scouting”: The Role of Summer Movements on Information Gathering for Winter Habitat By North American Porcupines</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/37333">Human Recreational Activity Negatively Impacts Shorebird Abundance and Behavior throughout the Atlantic Coast</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/37459">A Smart Curtailment Approach for Reducing Bat Fatalities and Curtailment Time at Wind Energy Facilities</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/37571">Bayesian Integrated Age-Period Survival Modeling Approach for Complete Lifespan Analysis</a></td>
+</tr>
+<tr class="even">
+<td align="center">16:20</td>
+<td align="center"><a href="https://afstws2019.org/sessions/multi-scale-impacts-of-climate-change-and-human-activities-on-salmon-productivity/40846">Concluding Remarks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/38307">Testing the Effects of Temperature and Feeding Regime on Precocious Maturation of Spring-Run Chinook Salmon</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/40006">Indicators of Ecosystem Transformation in Alaskan Fisheries</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/39455">From Paper to the Cloud – Tools and Methods for Communicating with a Diverse Audience</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/40547">Using Mass Harvest of Asian Carps to Achieve Management Goals.</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/39433">Testing the Transferability of Habitat Selection and Species Distribution Models Using Acoustic Telemetry and an Autonomous Underwater Vehicle</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/36140">Adding Early-Detection Surveillance for Invasive Mussels to USGS Stream Gaging Networks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/40663">What Goes up Must Come Down: Developing a Conservation Strategy for Migratory Fish in Bhutan</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/38913">Genetic Structure of Wild Brook Trout and Implications for Adaptability and Persistence</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fire-resilience-can-fish-wildlife-and-humans-adapt-to-shifts-in-wildfire-disturbance-part-i/39928">Fo’real Changes in Boreal Streams: A Multifaceted Modeling Approach to Predict the Effects of Forest Fire on Aquatic Habitat Vulnerability in Interior Alaska</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/39374">Do Antler and Horn Harvest Regulations Meet Ungulate Management Objectives?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/40075">Condition of Stream Fish Habitats throughout the Mississippi River Basin</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/habitat-and-distribution-modeling-across-terrains-and-disciplines-addressing-common-challenges-in-fisheries-and-wildlife-part-i/39636">Quantifying Habitat Suitability for Forage Fishes in Chesapeake Bay: A Coupled Modeling Approach Using Fishery Surveys and a Hydrodynamic Model</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/39706">Measuring Ecological Changes in the Context of Causal Analysis</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/professional-ethics-advocacy/40762">Panel Discussion</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/39917">An Evidence-Based Decision-Support Tool to Guide Hydropower Environmental Impact Assessments</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/40532">Changes in the Arctic: Shifts in a Nearshore Arctic Fish Community</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/marine-fish-ecology-i/39422">Life History and Trophic Niche of a Marine Catfish in the Northern Gulf of Mexico</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/35520">What Biologists Need to Know about Sedating and Anesthetizing Fish</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/40307">Addressing the Human Dimensions of California Fisheries: A Collaborative Process to Build and Share Information</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/39814">Guides Guiding Graduate Research</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/using-applied-technology-in-fisheries-monitoring-and-research/40286">Evaluation of the Juvenile Salmonid Acoustic Telemetry System (JSATS) Detection Range and Efficiency in Saltwater Estuarine Environments</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/beaver-mediated-restoration-and-management-in-riverscapes/40883">Discussion</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/39516">Cannabis Removal on Public Lands (CROP) Project</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/39944">Investigating an Ecological-Based Approach for Determining Hatchery Release Timing of Salmon</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/39527">Turning the Tide through Feminist Political Ecology: (Re)Visiting Insights for Fisheries Science and Practice</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/communication-the-key-to-effective-natural-resource-programs/35070">Science Communication in Informal and Formal Education Partnerships</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/34825">Close-Kin Mark-Recapture in Dispersal Limited Populations</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35203">Re-Imagining the Workplace? This “Work Thing” Is Not Going Away</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35141">The Distance Education Program at Utah State University</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35190">Delimiting the Upper Fish Distribution Boundary in Forested Streams with Electrofishing and Environmental DNA</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/batrachochytrium-salamandrivorans-the-next-threat-to-north-american-biodiversity/40788">Panel Discussion</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/35089">Applying Global Climate Model Projections of Sea Ice to Assess Future Habitat Conditions for Pacific Walrus</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/natural-resource-conservation-in-agricultural-landscapes-challenges-and-opportunties-part-i/40784">Panel Discussion</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/38170">Intraspecific Variation in Female Black Bear Response to Human Disturbance</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/36132">Vegetation Attributes Providing Thermal Refugia for Northern Bobwhites</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/35771">Decoding the Soundscape Using Deep Learning Models: A System to Support Long-Term Acoustic Monitoring of Wildlife Occupancy with Citizen Science Input</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-in-a-changing-climate/37274">Habitat Usage of the Climate-Sensitive Snowshoe Hare at Their Southern Range Boundary</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-birds-i/37732">Pinyon Jay Occurrence Modeling in Nevada and Relevance for Management</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35025">Modeling the Impact of Age-Dependent Toxicity Defense of Woody Plant to the Demographic Consequences and Population Persistence of Herbivores.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/37748">Use of 16 Years of Camera Trapping Data to Examine Jaguar Territory Use and Tenure in an Understudied Tropical Pine Forest in Belize</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/38110">Using Local Knowledge to Optimize Live-Capture of American Marten</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/36956">Unmanned Aerial Systems and Automated Photo Recognition Systems As a Method for Eagle Carcass Detection at Wind Energy Facilities</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/37969">A Need for Speed in Bayesian Population Models: A Practical Guide to Marginalizing Discrete Latent States</a></td>
+</tr>
+<tr class="odd">
+<td align="center">16:40</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/36734">Disentangling Patterns of Survival and Route Selection for Juvenile Spring-Run Chinook Salmon in the San Joaquin River</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/responding-to-ecosystem-transformations-resist-accept-or-direct/38789">A Rapid Social Threshold May Lead to Long-Term Ecological Transformation By Hippos in Colombia</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/39035">Grab the Popcorn, It’s Show Time!</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/scattered-covered-smothered-and-trapped-the-state-of-the-science-for-invasive-carps/37855">Assessment of Stimuli Used to Herd, Corral, and Concentrate Bigheaded Carps for Harvest</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/marking-tagging-and-tracking-of-fish-and-wildlife-part-i/40837">Discussion</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-genes-among-us-molecular-methods-for-species-monitoring-and-biodiversity-surveys-in-aquatic-and-terrestrial-ecosystems/37818">Developing an Environmental DNA (eDNA) Filter That Is Self-Preserving and Biodegradable</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/41637">Speaker and Topic TBD</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40261">Conservation Lessons and Opportunities: The Eastern Brook Trout Joint Venture’s Last Decade</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/38456">Shifting Paradigms in Fisheries Management: Is Harvest Mortality Still a Concern for Largemouth Bass?</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/multispecies-conservation-integrated-approaches-to-conservation-of-aquatic-and-terrestrial-ecosystems-part-i/39975">Assessing Data Adequacy for Quantifying Spatial Patterns of Freshwater Biodiversity</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/advancements-and-best-practices-in-quantitative-population-modeling/36723">How Well Do You Really Know Your Fish Population? Exploring Methods to Assess Freshwater Fish Populations</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/environmental-impact-assessment-for-hydropower-regulation/39074">Logistic Growth Curve Modeling of US Hydropower Energy Production for Environmental Impact Modeling and Policy Analysis</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/management-applications-of-estuarine-datasets/38578">The Value of a Non-Traditional Long Term Data Set: Sampling at a Former Naval Dry Dock</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/evaluating-methodologies/39160">Establishing Edna Method Equivalency for an Autonomous Sampling and Preservation Instrument</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/39784">Have We Reached the Tipping Point? Assessing Louisiana’s Freshwater Commercial Fisheries.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/casting-a-wider-net-increasing-stakeholder-communication-and-collaboration-as-an-early-career-scientist/40245">Engaging Undergraduates: Introducing Students to Working with Private Entities</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/38067">The Impact of Regulations and Business Models on Best Practices in Cannabis Cultivation</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/39832">Examining Dispersal of Point Stocked Atlantic Salmon Fry Relative to Habitat Qualities in Streams in Eastern Maine, USA.</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40691">Embrace the Chase</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/communication-the-key-to-effective-natural-resource-programs/35069">Elevator Talk: Developing the Ability to Make Connection for Future Collaborations and Funding</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/34833">Using Ckmr Methods to Empirically Estimate Viability Measures in Freshwater Systems</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/35205">Panel Discussion Re Students/Health/Workplace</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/35142">Graduate-Level Internships Can Benefit All: Lessons from Iowa DNR’s Fisheries Research Internship Program</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-of-terrestrial-and-aquatic-species-through-management-of-riparian-areas-within-private-working-forests/35240">Temporal Variability in the Upper Extent of Fish Distributions in Headwater Streams in Southwest Washington</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/revising-species-status-assessments-for-endangered-species-decision-making/35073">Multispecies Approaches to Status Assessments to Inform Endangered Species Determinations</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/ecology-management-of-bears/37116">The Community Ecology of Bears in Salmon Ecosystems</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/upland-game-bird-ecology-management-i/38166">Persistence of Greater Sage-Grouse Following Wildfire</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/uses-implications-of-new-technology-i/37659">Unmanned Aerial Vehicle Radio Telemetry (UAV-RT): Current System and Operational Methods</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/35026">Manipulating Molecular and Microbial Mechanisms of Toxin Tolerance to Manage Wild Herbivores</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/conservation-ecology-of-mammals-i/37254">Habitat Selection of a Large Ungulate during Risky Times</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/human-dimensions-in-conservation-i/38002">Planning or Procrastination? Testing the Scale at Which Elk Perceive and Respond to Risk from Human Hunters</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/implications-of-energy-development-conservation/36655">Expanding Availability of Confidential Data: Results from a Bird and Bat Wind Turbine Collision Fatality Database</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/biometrics-i/37885">Counting Carnivores with Cameras and Canines: An Evaluation of Spatial Density Models</a></td>
+</tr>
+<tr class="even">
+<td align="center">17:00</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/spring-run-chinook-salmon-in-the-western-united-states-status-trends-conservation-and-reintroduction-efforts/39196">Status Update on North Yuba River Reintroduction Efforts</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/the-art-of-communicating-cool-science-new-discoveries-and-policy-decisions-in-the-age-of-twitter/40816">Concluding Remarks</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/migratory-freshwater-fishes-global-status-update-and-swimway-initiative/40881">Panel Discussion</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/brook-trout-the-scourge-and-the-saint-applying-lessons-learned-from-both-eradication-and-reintroduction-efforts-across-the-west-and-east-to-better-manage-this-char/40293">Western Native Trout Initiative: The Role of Competing Species in the Conservation of Native Trout across the West</a></td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/39298">Harvest As a Tool to Manage Populations of Undesirable or Overabundant Fish and Wildlife Species</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/39542">Collaborative Research with Lake Ontario Charter Captains: King Salmon Movement and Behavior in Lake Ontario</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/coming-into-the-light-opportunities-and-challenges-that-cannabis-legalization-brings-to-natural-resources/41004">Concluding Remarks</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/getting-it-right-contemporary-approaches-to-captive-rearing-and-release-for-recreation-restoration-and-recovery-part-i/38729">Influence of Size-at-Stocking on Return-to-Creel of Hatchery Catchable Rainbow Trout</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40700">Best Practices in Achieving Organizational Diversity and Inclusion in the Fisheries Community</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/close-kin-mark-recapture-ckmr-a-framework-for-estimating-abundance-and-demography-from-genetically-related-individuals/40778">Panel Discussion</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/women-of-wildlife-work-life-balance-does-it-really-exist/40775">Panel Discussion</a></td>
+<td align="center"><a href="https://afstws2019.org/sessions/fisheries-and-wildlife-education-needed-competencies-current-pedagogy-and-distance-learning/40783">Panel Discussion</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/meals-metabolism-microbes-and-management-linking-foraging-behavior-and-physiology-to-predict-demographics-in-wildlife/40782">Panel Discussion</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center">17:20</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/synergies-in-harvest-management-for-fishing-and-hunting/37658">Concluding Remarks</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/extension-education-and-cooperative-research-to-address-the-needs-of-fishing-industry-stakeholders/39447">Angler Use of Lake Champlain Climate Buoy Data 2016-2018</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="https://afstws2019.org/sessions/diversity-and-inclusion-leveraging-actions-through-collaboration/40873">Panel Discussion</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

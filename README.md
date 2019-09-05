@@ -1,4 +1,4 @@
-This code can be used to exatract the Detailed Schedule of the [AFS149 / TWS2019 conference](https://afstws2019.org/detailed-schedule/) and convert it to flat files so that you can easily see all of the talks that are happening at the same time, and plan your own conference schedule accordingly!
+This code can be used to exatract the Detailed Schedule of the [AFS149 / TWS2019 conference](https://afstws2019.org/detailed-schedule/) and convert it to flat files so that you can easily see all of the talks that are happening at the same time, and plan your own conference schedule accordingly! At the moment it only contains talks listed under "Symposiums" and "Contributed Papers".
 
 The results of this little project can be found here as a series of flat files: https://docs.google.com/spreadsheets/d/1e6IrSt8uDWZSIk62Jm8FVDpLR2MVTxfiQAQ8f46HW7s/edit?usp=sharing
 

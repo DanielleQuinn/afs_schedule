@@ -13,7 +13,7 @@ source("functions/process_talks.R")
 source("functions/order_rooms.R")
 
 # Import AFS talks and format date and datetime
-talks <- read.csv("afs_talks.csv") %>%
+talks <- read.csv("results/afs_talks.csv") %>%
   mutate(date = ymd(date),
          datetime = ymd_hms(datetime))
 

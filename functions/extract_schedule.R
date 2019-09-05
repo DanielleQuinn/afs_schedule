@@ -1,14 +1,17 @@
-# Function: extract_schedule()
-## Can be used with links from AFS149 Detailed Schedule: https://afstws2019.org/detailed-schedule/
-## Input: url from detailed schedule
-## Condition: represents a symposium or contributed paper session
+# Function: extract_schedule(page)
+# input: urls of links from AFS149 Detailed Schedule: https://afstws2019.org/detailed-schedule/
 ## Output: data frame of date, time, location (building), room, session name, talk title, and link to abstract for each talk in session
 extract_schedule <- function(page) {
   read_page <- read_html(page)
+
+  # Only extract schedules from pages labelled "Symposium" or
+  # "Contributed Paper Session"
   type <- read_page %>%
     html_node(xpath = "/html/body/div[2]/div/div[1]/p[1]/span[1]/strong") %>%
     html_text()
-  if(!type %in% c("Symposium", "Contributed Paper Session")) { return(NULL)}
+  if(!type %in% c("Symposium", "Contributed Paper Session")) {return(NULL)}
+
+  # Extract date, location, session name 
   if(type %in% c("Symposium", "Contributed Paper Session")) {
     date_input <- read_page %>%
       html_nodes(xpath = "/html/body/div[2]/div/div[2]/div/span[2]/strong") %>%
@@ -20,6 +23,9 @@ extract_schedule <- function(page) {
     session_input <- read_page %>%
       html_nodes("h1") %>%
       html_text(trim = TRUE)
+    
+    # For each row of the html table
+    # extract the embedded link from href
     href_rows <- html_nodes(read_page, "table") %>%
       html_nodes( "tr") %>%
       lapply(., function(x) {
@@ -27,6 +33,10 @@ extract_schedule <- function(page) {
           html_nodes( "a") %>%
           html_attr("href")
       })
+    
+    # Extract the text from the html table, convert to a
+    # data frame, tidy, and add date, session,
+    # location, and links
     df <- read_page %>%
       html_nodes(xpath = "/html/body/div[2]/div/div[1]/table") %>%
       html_table() %>%

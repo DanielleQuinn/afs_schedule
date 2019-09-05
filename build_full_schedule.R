@@ -42,4 +42,4 @@ talks <- talks %>%
          date = mdy(talks$date),
          datetime = ymd_hm(paste(date, hour, min, sep="-"))) %>%
   select(date, datetime, location, room, session, title, link) %>%
-  write.csv("afs_talks.csv", row.names = FALSE)
+  write.csv("results/afs_talks.csv", row.names = FALSE)
